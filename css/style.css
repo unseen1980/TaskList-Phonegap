@@ -1,0 +1,107 @@
+/** 
+* Author: Christos Koutsiaris
+
+* Assessment 1 -  Mobile jQuery
+
+* Student ID: STU-00001219
+
+* Date: 2017/04/08
+
+*  Code: BScHn16B_MDV_A1
+
+*/
+
+.no-box-shadow {
+    box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.4);
+}
+
+.set-inline {
+    display: inline;
+}
+
+.font-weight-normal {
+    font-weight: 400;
+}
+
+a:link {
+    color: #fff;
+}
+
+a:visited {
+    color: #fff;
+}
+
+a:hover {
+    text-shadow: 1px 1px 2px #2196F3;
+}
+
+.todo-date {
+    display: inline-block;
+    vertical-align: top;
+    font-size: 14px;
+}
+
+.todo-glyph {
+    display: inline-block;
+    vertical-align: text-top;
+    font-size: 16px;
+}
+
+.form-horizontal .control-label {
+    text-align: left;
+}
+
+.jumbotron {
+    padding-top: 30px;
+    padding-bottom: 10px;
+}
+
+.jumbotron-settings {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.big-button {
+    width: 100%;
+    margin: 15px 0;
+}
+
+.form-control {
+    height: 32px
+}
+
+.calendar-icon {
+    padding: 2px 8px;
+}
+
+.icon-bar {
+    background-color: #b2dbfb !important;
+}
+
+.plus-button {
+    border-radius: 30px;
+    font-size: 30px;
+    padding: 0 19px;
+    position: fixed;
+    bottom: 5%;
+    right: 5%;
+    z-index: 1;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.logo {
+    width: 55%;
+}
+
+.img-logo {
+    width: 15%;
+    display: inline !important;
+    margin-right: 10px;
+}
