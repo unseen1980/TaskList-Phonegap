@@ -1,16 +1,24 @@
+// * Author: Christos Koutsiaris
+// * Assessment 2 -  AngularJS Todo-List
+// * Student ID: STU-00001219
+// * Date: 2017/01/01
+// * Code: BScHn16B_MDV_A2
 angular.module('todoApp.routes', ['ngRoute', 'ui.bootstrap', 'todoApp.controllers'])
     .config(function($routeProvider) {
         $routeProvider
             .when('/', {
-                templateUrl: 'scripts/templates/new-todo.html',
-                controller: 'todoCtrl'
+                templateUrl: 'scripts/partials/todo-list.html',
+                controller: 'todoListCtrl'
+            })
+            .when('/new', {
+                templateUrl: 'scripts/partials/new-todo.html'
             })
             .when('/settings', {
-                templateUrl: 'scripts/templates/settings.html',
-                controller: 'todoCtrl'
+                templateUrl: 'scripts/partials/settings.html',
+                controller: 'settingsCtrl'
             })
             .when('/todo/:id', {
-                templateUrl: 'scripts/templates/edit-todo.html',
+                templateUrl: 'scripts/partials/edit-todo.html',
                 controller: 'editTodoCtrl'
             })
             .otherwise({

@@ -1,15 +1,20 @@
-<div class="col-sm-offset-5 col-sm-2 col-md-offset-5 col-lg-offset-5 col-md-2 col-lg-2">
-    <button ng-hide="collapsed" type="button" class="btn btn-primary plus-button" ng-click="collapsed = !collapsed">+</button>
-</div>
-<div ng-show="collapsed">
-    <form class="form-horizontal jumbotron" novalidate>
-        <div class="row" ng-show="showX">
-            <div class="cursor-pointer pull-right col-sm-1 text-right" ng-click="collapsed=!collapsed"><i class="glyphicon glyphicon-remove"></i></div>
-        </div>
+<!--
+    * Author: Christos Koutsiaris
+
+    * Assessment 2 -  AngularJS Todo list
+
+    * Student ID: STU-00001219
+
+    * Date: 
+
+    * Code: BScHn16B_MDV_A2
+-->
+<div>
+    <form name="todoForm" class="form-horizontal jumbotron" ng-submit="submitForm(todoForm.$valid, todo)" novalidate>
         <div class="form-group">
             <label for="inputTitle" class="col-sm-2 col-md-2 col-lg-2 control-label">Title</label>
             <div class="col-sm-10">
-                <input type="text" class="form-control" id="inputTitle" ng-model="todo.title" placeholder="Add a title">
+                <input type="text" class="form-control" id="inputTitle" minlength="5" maxlength="20" ng-model="todo.title" ng-required="true" placeholder="Add a title">
             </div>
         </div>
         <div class="form-group">
@@ -48,8 +53,10 @@
         </div>
         <div class="form-group">
             <div class="col-sm-offset-10 col-sm-2 col-md-offset-10 col-lg-offset-10 col-md-2 col-lg-2">
-                <button ng-if="mode==='edit'" type="submit" ng-click="updateTodo(todo)" class="btn-block btn btn-primary">Save</button>
-                <button ng-if="mode==='new'" type="submit" ng-click="addTodo(todo);" class="btn-block btn btn-primary">Add</button>
+                <button type="submit" class="btn-block btn btn-primary" ng-disabled="todoForm.$invalid">
+                    <span ng-if="mode==='edit'" >Save</span>
+                    <span ng-if="mode==='new'" >Add</span>
+                </button>
             </div>
         </div>
     </form>

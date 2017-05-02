@@ -71,7 +71,7 @@ a:hover {
 }
 
 .calendar-icon {
-    padding: 2px 8px;
+    padding: 4px 8px;
 }
 
 .icon-bar {
@@ -83,8 +83,8 @@ a:hover {
     font-size: 30px;
     padding: 0 19px;
     position: fixed;
-    bottom: 5%;
-    right: 5%;
+    bottom: 4%;
+    right: 4%;
     z-index: 1;
 }
 
@@ -97,11 +97,11 @@ a:hover {
 }
 
 .logo {
-    width: 55%;
+    width: 200px;
+    display: inline-flex;
 }
 
 .img-logo {
-    width: 15%;
-    display: inline !important;
+    width: 35px;
     margin-right: 10px;
 }
