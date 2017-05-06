@@ -6,20 +6,20 @@
     * Code: BScHn16B_MDV_A2
 -->
 
-<div class="col-sm-12 col-md-6 col-lg-3" ng-repeat="todo in panels track by $index">
+<div class="col-sm-12 col-md-6 col-lg-3" data-ng-repeat="todo in panels track by $index">
     <div class="panel panel-{{::panelHeaderColor[todo.priority]}}">
         <div class="panel-heading">
-            <h3 class="panel-title set-inline" ng-bind="::todo.title | truncate: 20"></h3>
-            <a class="pull-right" ng-href="#todo/{{todo.id}}">
+            <h3 class="panel-title set-inline" data-ng-bind="::todo.title | truncate: 20"></h3>
+            <a class="pull-right" data-ng-href="#todo/{{todo.id}}">
                 <i class="glyphicon glyphicon-pencil" aria-hidden="true"></i>
             </a>
         </div>
         <div class="panel-body">
-            <div ng-cloak="">
-                <span class="todo-date" ng-bind="::todo.date | date:'dd/MM/yyyy'"></span>
+            <div data-ng-cloak="">
+                <span class="todo-date" data-ng-bind="::todo.date | date:'dd/MM/yyyy'"></span>
                 <span class="glyphicon {{statusOptionsGlyphs[todo.status]}} todo-glyph" aria-hidden="true"></span>
             </div>
-            <div ng-bind="::todo.description | truncate: 40"></div>
+            <div data-ng-bind="::todo.description | truncate: 40"></div>
         </div>
     </div>
 </div>

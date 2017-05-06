@@ -7,27 +7,27 @@
 -->
 
 <div>
-    <form name="todoForm" class="form-horizontal jumbotron" ng-submit="submitForm(todoForm.$valid, todo)" novalidate>
+    <form name="todoForm" class="form-horizontal jumbotron" data-ng-submit="submitForm(todoForm.$valid, todo)" novalidate>
         <div class="form-group">
             <label for="inputTitle" class="col-sm-2 col-md-2 col-lg-2 control-label">Title</label>
             <div class="col-sm-10">
-                <input type="text" class="form-control" id="inputTitle" minlength="5" maxlength="20" ng-model="todo.title" ng-required="true" placeholder="Add a title">
+                <input type="text" class="form-control" id="inputTitle" maxlength="20" data-ng-model="todo.title" data-ng-required="true" placeholder="Add a title">
             </div>
         </div>
         <div class="form-group">
             <label for="inputDesc" class="col-sm-2 control-label">Description</label>
             <div class="col-sm-10">
-                <input type="text" class="form-control" ng-model="todo.description" id="inputDesc" placeholder="Add description">
+                <input type="text" class="form-control" data-ng-model="todo.description" id="inputDesc" placeholder="Add description">
             </div>
         </div>
         <div class="form-group">
             <label for="inputDate" class="col-sm-2 control-label">Due by</label>
             <div class="col-sm-3">
                 <p class="input-group">
-                    <input type="text" class="form-control font-weight-normal" id="inputDate" uib-datepicker-popup="dd-MMMM-yyyy" ng-model="todo.date" is-open="calendar.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" />
+                    <input type="text" class="form-control font-weight-normal" id="inputDate" uib-datepicker-popup="dd-MMMM-yyyy" data-ng-model="todo.date" is-open="calendar.opened" datepicker-options="dateOptions" data-ng-required="true" close-text="Close" />
                     <span class="input-group-btn">
                     <button type="button" class="btn btn-default no-box-shadow calendar-icon" 
-                            ng-click="openCalendar()">
+                            data-ng-click="openCalendar()">
                         <i class="glyphicon glyphicon-calendar"></i>
                     </button>
                 </span>
@@ -35,24 +35,24 @@
             </div>
             <label for="select" class="col-sm-1 control-label">Priority</label>
             <div class="col-sm-2">
-                <select class="form-control" id="select" ng-model="todo.priority">
-                <option ng-repeat="priority in priorityOptions track by $index" value="{{::priority.value}}" ng-bind="::priority.type">
+                <select class="form-control" id="select" data-ng-model="todo.priority">
+                <option data-ng-repeat="priority in priorityOptions track by $index" value="{{::priority.value}}" data-ng-bind="::priority.type">
                 </option>
             </select>
             </div>
             <label for="select" class="col-sm-1 control-label">Status</label>
             <div class="col-sm-3">
-                <select class="form-control" id="select" ng-model="todo.status">
-                <option ng-repeat="status in statusOptions track by $index" value="{{::status.value}}" ng-bind="::status.type">
+                <select class="form-control" id="select" data-ng-model="todo.status">
+                <option data-ng-repeat="status in statusOptions track by $index" value="{{::status.value}}" data-ng-bind="::status.type">
                 </option>
             </select>
             </div>
         </div>
         <div class="form-group">
             <div class="col-sm-offset-10 col-sm-2 col-md-offset-10 col-lg-offset-10 col-md-2 col-lg-2">
-                <button type="submit" class="btn-block btn btn-primary" ng-disabled="todoForm.$invalid">
-                    <span ng-if="mode==='edit'" >Save</span>
-                    <span ng-if="mode==='new'" >Add</span>
+                <button type="submit" class="btn-block btn btn-primary" data-ng-disabled="todoForm.$invalid">
+                    <span data-ng-if="mode==='edit'" >Save</span>
+                    <span data-ng-if="mode==='new'" >Add</span>
                 </button>
             </div>
         </div>

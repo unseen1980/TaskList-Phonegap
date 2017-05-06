@@ -7,7 +7,7 @@
 -->
 
 <!DOCTYPE html>
-<html lang="en" ng-app="todoApp">
+<html lang="en" data-ng-app="todoApp">
 
 <head>
     <title>My Task list</title>
@@ -19,25 +19,25 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-inverse" role="navigation" ng-init="isNavCollapsed = true">
+    <nav class="navbar navbar-inverse" data-ng-init="isNavCollapsed = true">
         <div class="navbar-header">
-            <button type="button" class="navbar-toggle" ng-click="isNavCollapsed = !isNavCollapsed">
+            <button type="button" class="navbar-toggle" data-ng-click="isNavCollapsed = !isNavCollapsed">
 				<span class="sr-only">Toggle navigation</span>
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 			</button>
             <a class="navbar-brand logo" href="#">
-                <img src="assets/logo.png" class="img-logo">Task list
+                <img src="assets/logo.png" class="img-logo" alt="Task list logo">Task list
             </a>
         </div>
-        <div class="collapse navbar-collapse" uib-collapse="isNavCollapsed">
+        <div class="collapse navbar-collapse" data-uib-collapse="isNavCollapsed">
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="#/settings" ng-click="isNavCollapsed = !isNavCollapsed">Settings</a></li>
+                <li><a href="#/settings" data-ng-click="isNavCollapsed = !isNavCollapsed">Settings</a></li>
             </ul>
         </div>
     </nav>
-    <div class="full-height animate-page" ng-view></div>
+    <div class="full-height animate-page" data-ng-view></div>
     <script src="lib/angular.min.js"></script>
     <script src="lib/angular-route.min.js"></script>
     <script src="lib/angular-animate.min.js"></script>
