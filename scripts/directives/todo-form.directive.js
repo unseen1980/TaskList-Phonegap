@@ -61,6 +61,7 @@ angular.module('todoApp')
                         $scope.todos = res;
                         $scope.todo = {};
                         $location.path('/');
+                        window.scrollTo(0, 0);
                     });
                 };
 
@@ -71,6 +72,7 @@ angular.module('todoApp')
                     todo.id = $scope.todoClone.id;
                     storage.updateTodo(todo).then(function() {
                         $location.path('/');
+                        window.scrollTo(0, 0);
                     });
                 };
 
