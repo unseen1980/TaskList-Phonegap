@@ -1,14 +1,11 @@
 <!--
     * Author: Christos Koutsiaris
-
-    * Assessment 2 -  AngularJS Todo list
-
+    * Assessment 2 - BScH Mobile Development, Digital Skills Academy
     * Student ID: STU-00001219
-
-    * Date: 
-
+    * Date: 2017/05/08
     * Code: BScHn16B_MDV_A2
 -->
+
 <!DOCTYPE html>
 <html lang="en" ng-app="todoApp">
 
@@ -36,11 +33,11 @@
         </div>
         <div class="collapse navbar-collapse" uib-collapse="isNavCollapsed">
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="#/settings">Settings</a></li>
+                <li><a href="#/settings" ng-click="isNavCollapsed = !isNavCollapsed">Settings</a></li>
             </ul>
         </div>
     </nav>
-    <div ng-view></div>
+    <div class="full-height animate-page" ng-view></div>
     <script src="lib/angular.js"></script>
     <script src="lib/angular-route.js"></script>
     <script src="lib/angular-animate.min.js"></script>

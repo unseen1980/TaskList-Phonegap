@@ -1,13 +1,15 @@
 // * Author: Christos Koutsiaris
-// * Assessment 2 -  AngularJS Todo-List
+// * Assessment 2 - BScH Mobile Development, Digital Skills Academy
 // * Student ID: STU-00001219
-// * Date: 2017/01/01
+// * Date: 2017/05/08
 // * Code: BScHn16B_MDV_A2
+
 angular.module('todoApp')
     .factory('storage', function($q) {
         var store = {
             todos: [],
 
+            // Read - Write to localstorage functions
             getFromLocalStorage: function() {
                 return JSON.parse(localStorage.getItem('todoApp') || '[]');
             },
@@ -16,6 +18,7 @@ angular.module('todoApp')
                 localStorage.setItem('todoApp', JSON.stringify(todos));
             },
 
+            // CRUD logic functions
             deleteCompleted: function() {
                 var deferred = $q.defer();
 
@@ -63,7 +66,7 @@ angular.module('todoApp')
                 return deferred.promise;
             },
 
-            insert: function(todo) {
+            add: function(todo) {
                 var deferred = $q.defer();
 
                 store.todos.push(todo);
@@ -92,7 +95,7 @@ angular.module('todoApp')
             getTodo: function(id) {
                 var deferred = $q.defer();
                 var todo = store.getFromLocalStorage().filter(function(todo) {
-                    return todo.id === id
+                    return todo.id === id;
                 })[0];
 
                 deferred.resolve(todo);

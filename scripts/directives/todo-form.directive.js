@@ -1,7 +1,7 @@
 // * Author: Christos Koutsiaris
-// * Assessment 2 -  AngularJS Todo-List
+// * Assessment 2 - BScH Mobile Development, Digital Skills Academy
 // * Student ID: STU-00001219
-// * Date: 2017/01/01
+// * Date: 2017/05/08
 // * Code: BScHn16B_MDV_A2
 angular.module('todoApp')
     .directive('todoForm', function() {
@@ -17,8 +17,8 @@ angular.module('todoApp')
                 // Initialization of empty todo when in new mode
                 $scope.todo = angular.isUndefined($scope.todo) ? {} : $scope.todo;
                 if (angular.isDefined($scope.todo)) {
-                    $scope.todo.date = new Date($scope.todo.date)
-                };
+                    $scope.todo.date = new Date($scope.todo.date);
+                }
 
                 $scope.todoClone = angular.copy($scope.todo);
                 $scope.$routeParams = $routeParams;
@@ -57,7 +57,7 @@ angular.module('todoApp')
                  */
                 $scope.addTodo = function(todo) {
                     todo.id = Date.now();
-                    storage.insert(todo).then(function(res) {
+                    storage.add(todo).then(function(res) {
                         $scope.todos = res;
                         $scope.todo = {};
                         $location.path('/');
@@ -80,11 +80,12 @@ angular.module('todoApp')
                  * @param  {object} todo Todo data
                  */
                 $scope.submitForm = function(isValid, todo) {
+                    // Set defaults to status and priority if user leave these fields blank
                     if (angular.isUndefined(todo.status)) todo.status = $scope.statusOptions[0].value.toString();
                     if (angular.isUndefined(todo.priority)) todo.priority = $scope.priorityOptions[2].value.toString();
                     if (isValid && $scope.mode === 'edit') $scope.updateTodo(todo);
                     if (isValid && $scope.mode === 'new') $scope.addTodo(todo);
-                }
+                };
             }
         };
     });
